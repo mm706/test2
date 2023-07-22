@@ -1,0 +1,173 @@
+
+htm body{
+    margin: 5px;
+    padding: 5px;
+
+}
+
+body{
+    background-color: rgba(254, 175, 254, 0.59);
+}
+
+
+.main-nav h1{
+    margin-left:3%;
+}
+
+.main-nav li{
+    display: inline;
+    padding-right: 20px;
+    font-size: 1.5em;
+
+}
+.main-nav a{
+    text-decoration: none;
+
+
+}
+
+.main-nav button{
+    float: right;
+    margin-right: 10px;
+
+}
+
+.nav-btn-div{
+    margin-top: -50px;
+    margin-right:3%;
+}
+
+.nav-btn{
+    cursor: pointer;
+    background-color: rgba(122, 14, 72, 0.93);
+    color: rgba(254, 175, 254, 0.59);
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 1.2em;
+    border: solid rgba(122, 14, 72, 0.93) 3px ;
+
+}
+
+.nav-btn-two{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0);
+    color: rgba(122, 14, 72, 0.93);
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 1.2em;
+    border: solid rgba(122, 14, 72, 0.93) 3px ;
+}
+
+.links-nav{
+
+    text-align: center;
+    float: none;
+    position: absolute;
+    top:1%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    margin-top: 15px;
+
+}
+
+.middle-text-top{
+    text-align: center;
+    font-size: 2em;
+    margin-top: 8%;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+.middle-text-header{
+    text-align: center;
+    font-size: 4.5em;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.middle-text-bottom{
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.middle-btn{
+    text-align: center;
+}
+
+.bottom-list{
+    margin-left: 11%;
+    margin-top: 5%;
+}
+
+.bottom-list li{
+    display:inline;
+
+
+}
+
+.bottom-img{
+    height:250px;
+    width:250px;
+    border-radius: 40px;
+
+
+}
+.font-color{
+    color: rgba(122, 14, 72, 0.93);
+}
+
+.img{
+    display: none;
+}
+
+.bottom-img-div{
+    position: relative;
+
+
+    transform: translateX(31%);
+
+}
+
+.w3-display-left{
+
+    text-align: center;
+}
+
+.w3-button{
+    transform: translateX(1800%);
+}
+
+.w3-display-right{
+
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+
+    .links-nav {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    .btns{
+        display: none;
+    }
+
+    .main-nav h1{
+        display: none;
+    }
+    .middle-text-top{
+        display: none;
+    }
+
+}
