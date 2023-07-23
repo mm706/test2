@@ -1,17 +1,11 @@
-var slideIndex = 1;
-showDivs(slideIndex);
+const carousel = document.querySelector(".carousel"),
+    firstImg = carousel.querySelectorAll(".bottom-img");
+arrowBtns = document.querySelectorAll(".wrapper-btn");
 
-function plusDivs(n) {
-    showDivs(slideIndex += n);
-}
+let firstImgWidth = firstImg.clientWidth +50;
 
-function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("slider");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    x[slideIndex-1].style.display = "block";
-}
+arrowBtns.forEach( icon => {
+    icon.addEventListener("click", () => {
+        carousel.scrollLeft += icon.id == "left" ? firstImgWidth : firstImgWidth;
+    });
+});
