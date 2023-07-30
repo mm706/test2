@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link type="text/css" rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 </head>
 <body>
-<script src="js.js"></script>
+
 <header>
     <nav class="main-nav">
         <h1 class="font-color">fetch</h1>
@@ -34,19 +36,75 @@
     <p class="middle-text-bottom font-color">Dive into out expertly made music samples, covering all music<br>styles. Get creative with endless sound choices</p>
     <div class="middle-btn "><button class="nav-btn" >Explore Sounds</button></div>
 
-    <div class="wrapper">
-        <button class="wrapper-btn" onclick="plusDivs(-1)" id="left">&#10094;</button>
-        <div class="carousel">
-            <img class="bottom-img slider" src="pics/3379.webp"/>
-            <img class="bottom-img img slider" src="pics/Artistic_Pixel_Sorter_Photoshop_Actions.jpg"/>
-            <img class="bottom-img img slider" src="pics/Michal-Zahornacky-www.michalzahornacky.com_.jpg"/>
-            <img class="bottom-img img slider" src="pics/creativity-artistic-voice-Kristy-Gordon-Jenna-24x18-1-scaled.jpg"/>
-            <img class="bottom-img img slider" src="pics/self-portrait-at-the-easel-sofonisba-anguissola-oil-on-canvas-c.-1556−57-poland-the-castle-¬¬–-museum-in-lańcut.jpg"/>
+    <div class="wrapper swiper mySwiper">
+        <div class="wrapper-btn swiper-button-prev"  id="left"></div>
+        <div class="carousel swiper-wrapper ">
+            <img class="bottom-img slider swiper-slide" src="pics/3379.webp"/>
+            <img class="bottom-img img slider swiper-slide" src="pics/Artistic_Pixel_Sorter_Photoshop_Actions.jpg"/>
+            <img class="bottom-img img slider swiper-slide" src="pics/Michal-Zahornacky-www.michalzahornacky.com_.jpg"/>
+            <img class="bottom-img img slider swiper-slide" src="pics/creativity-artistic-voice-Kristy-Gordon-Jenna-24x18-1-scaled.jpg"/>
+            <img class="bottom-img img slider swiper-slide" src="pics/self-portrait-at-the-easel-sofonisba-anguissola-oil-on-canvas-c.-1556−57-poland-the-castle-¬¬–-museum-in-lańcut.jpg"/>
         </div>
-        <button class="wrapper-btn" onclick="plusDivs(-1)" id="right">&#10095;</button>
+        <div class="wrapper-btn swiper-button-next"  id="right"></div>
     </div>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            type: "fraction",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    var appendNumber = 4;
+    var prependNumber = 1;
+    document
+        .querySelector(".prepend-2-slides")
+        .addEventListener("click", function (e) {
+            e.preventDefault();
+            swiper.prependSlide([
+                '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+                '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
+            ]);
+        });
+    document
+        .querySelector(".prepend-slide")
+        .addEventListener("click", function (e) {
+            e.preventDefault();
+            swiper.prependSlide(
+                '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
+            );
+        });
+    document
+        .querySelector(".append-slide")
+        .addEventListener("click", function (e) {
+            e.preventDefault();
+            swiper.appendSlide(
+                '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
+            );
+        });
+    document
+        .querySelector(".append-2-slides")
+        .addEventListener("click", function (e) {
+            e.preventDefault();
+            swiper.appendSlide([
+                '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+                '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
+            ]);
+        });
+</script>
 
 </body>
 </html>
